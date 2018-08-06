@@ -4,6 +4,7 @@
 [Zap](https://github.com/uber-go/zap), the structured, leveled logging framework from Uber
 
 [![CircleCI](https://circleci.com/gh/akath19/gin-zap.svg?style=svg)](https://circleci.com/gh/akath19/gin-zap)
+[![Coverage Status](https://coveralls.io/repos/github/akath19/gin-zap/badge.svg?branch=master)](https://coveralls.io/github/akath19/gin-zap?branch=master)
 [![Go Report Card](https://goreportcard.com/badge/github.com/akath19/gin-zap)](https://goreportcard.com/report/github.com/akath19/gin-zap)
 [![GoDoc](https://godoc.org/github.com/akath19/gin-zap?status.svg)](https://godoc.org/github.com/akath19/gin-zap)
 
@@ -54,6 +55,8 @@ Gin-Zap will produces lines in the following way:
 ## Contributing
 
 All PRs are welcome!
+
+* Any PRs looking to improve test coverage will be greatly appreciated
 
 ## License
 
