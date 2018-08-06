@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.9
+    working_directory: /go/src/github.com/akath19/gin-zap
+    steps:
+      - checkout
+
+      # specify any bash command here prefixed with `run: `
+      - run: 
+        name: Install Dep
+        command: curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+      - run: 
+        name: Install Dependencies
+        command: dep ensure
+      - run:
+        name: Install Goveralls
+        command: go get github.com/mattn/goveralls
+      - run:
+        name: Run Tests
+        command: go test -v -cover -race -coverprofile=coverage.out
+      - run:
+        name: Send Coverage Results to Coveralls
+        command: goveralls -coverprofile=coverage.out -service=circle-ci -repotoken=$COVERALLS_TOKEN
